@@ -42,7 +42,7 @@ const NewsList: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      const storiesData: Stories = await getStories();
+      const storiesData: any = await getStories();
       setStories(storiesData);
     })();
   }, []);
