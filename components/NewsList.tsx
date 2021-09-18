@@ -35,16 +35,16 @@ const useStyles = makeStyles((theme) => ({
 
 const NewsList: React.FC = () => {
   const classes = useStyles();
-  const [stories, setStories] = useState([]);
+  const [stories, setStories] = useState<Story[]>();
 
   useEffect(() => {
     (async () => {
-      const storiesData = await getStories();
+      const storiesData: Story[] = await getStories();
       setStories(storiesData);
     })();
   }, []);
 
-  return stories.length > 0 ? (
+  return stories && stories.length > 0 ? (
     <Grid justifyContent="center" className={classes.root} container>
       <Grid style={{ width: "100%" }} item xs={10} sm={8}>
         <Typography color="primary" variant="h4" className={classes.headline}>
