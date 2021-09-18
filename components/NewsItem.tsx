@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "next/link";
-import moment from "moment";
 
 interface Props {
   id: number;
