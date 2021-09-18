@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontStyle: "italic",
     textAlign: "left",
-    marginBottom: "0.5em",
-    paddingLeft: "0.5em",
+    marginBottom: "0.5rem",
+    paddingLeft: "0.5rem",
   },
 
   link: {
