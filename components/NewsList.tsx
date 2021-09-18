@@ -35,11 +35,11 @@ const useStyles = makeStyles((theme) => ({
 
 const NewsList: React.FC = () => {
   const classes = useStyles();
-  const [stories, setStories] = useState<Story[]>();
+  const [stories, setStories] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const storiesData: Story[] = await getStories();
+      const storiesData = await getStories();
       setStories(storiesData);
     })();
   }, []);
