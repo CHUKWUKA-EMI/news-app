@@ -38,7 +38,7 @@ type Stories = Story[];
 
 const NewsList: React.FC = () => {
   const classes = useStyles();
-  const [stories, setStories] = useState<Stories>();
+  const [stories, setStories] = useState<Stories | undefined>();
 
   useEffect(() => {
     (async () => {
