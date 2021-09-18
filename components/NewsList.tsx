@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     paddingTop: "7em",
+    paddingLeft: "20%",
   },
   title: {
     textDecoration: "none",
@@ -33,22 +34,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+type Stories = Story[];
+
 const NewsList: React.FC = () => {
   const classes = useStyles();
-  const [stories, setStories] = useState([]);
+  const [stories, setStories] = useState<Stories>();
 
   useEffect(() => {
     (async () => {
-      const storiesData = await getStories();
+      const storiesData: Stories = await getStories();
       setStories(storiesData);
     })();
   }, []);
 
   return stories && stories.length > 0 ? (
     <Grid justifyContent="center" className={classes.root} container>
-      <Grid style={{ width: "100%" }} item xs={10} sm={8}>
+      <Grid style={{ width: "100%" }} item xs={10} sm={10}>
         <Typography color="primary" variant="h4" className={classes.headline}>
-          News Headlines
+          Stories Headlines
           <Divider
             style={{
               fontWeight: "bold",
@@ -63,7 +66,7 @@ const NewsList: React.FC = () => {
 
       {stories.map((story: Story, index) => {
         return (
-          <Grid style={{ width: "100%" }} key={index} item xs={10} sm={8}>
+          <Grid style={{ width: "100%" }} key={index} item xs={10} sm={10}>
             <NewsItem
               id={story.id}
               by={story.by}

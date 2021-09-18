@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main>
         <NavBar />
-        <Container disableGutters maxWidth="md">
+        <Container maxWidth="lg">
           <NewsList />
         </Container>
       </main>

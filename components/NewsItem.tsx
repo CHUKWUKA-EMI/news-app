@@ -54,7 +54,7 @@ const NewsItem: React.FC<Props> = ({
   const hours = Math.floor(timeDiff / (1000 * 60 * 60));
 
   return (
-    <Box className={classes.root}>
+    <Box justifyContent="center" className={classes.root}>
       <Typography>
         <Link href={url ? url : "/"}>
           <a className={classes.title}>{title}</a>
