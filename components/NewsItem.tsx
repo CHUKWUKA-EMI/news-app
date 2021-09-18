@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     color: "darkslategray",
     cursor: "pointer",
     fontWeight: 700,
-    fontSize: "16px",
+    fontSize: "18px",
   },
   link: {
     textDecoration: "none",
