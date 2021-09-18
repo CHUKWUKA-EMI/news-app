@@ -36,8 +36,7 @@ export const getStories = async () => {
     const resData = await Promise.all(
       storiesIds.slice(0, 40).map((id: number) => getStory(id))
     );
-    const stories: Stories = resData.filter((story: Story) => !!story);
-    return stories;
+    return resData;
     // }
   } catch (error) {
     console.log(error);
