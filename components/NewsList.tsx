@@ -64,7 +64,7 @@ const NewsList: React.FC = () => {
         </Typography>
       </Grid>
 
-      {stories.map((story: Story, index) => {
+      {stories.map((story: Story, index: number) => {
         return (
           <Grid style={{ width: "100%" }} key={index} item xs={10} sm={10}>
             <NewsItem
