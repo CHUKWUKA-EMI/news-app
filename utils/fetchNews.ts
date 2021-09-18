@@ -11,6 +11,8 @@ export interface Story {
   url: string;
 }
 
+type Stories = Story[];
+
 async function getStory(storyId: number): Promise<Story | undefined> {
   try {
     const response = await axios.get(
@@ -34,7 +36,7 @@ export const getStories = async () => {
     const data = await Promise.all(
       storiesIds.slice(0, 40).map((id: number) => getStory(id))
     );
-    const stories = data.filter((story: Story) => !!story);
+    const stories: Stories = data.filter((story: Story) => !!story);
     return stories;
     // }
   } catch (error) {
