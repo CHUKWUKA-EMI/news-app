@@ -33,10 +33,10 @@ export const getStories = async () => {
     );
     // if (response.status === 200) {
     const { data: storiesIds } = response;
-    const data = await Promise.all(
+    const resData = await Promise.all(
       storiesIds.slice(0, 40).map((id: number) => getStory(id))
     );
-    const stories: Stories = data.filter((story: Story) => !!story);
+    const stories: Stories = resData.filter((story: Story) => !!story);
     return stories;
     // }
   } catch (error) {
